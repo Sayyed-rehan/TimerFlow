@@ -8,8 +8,8 @@ const Home = () => {
 
     const nav = useNavigate()
     const [inputs, setinputs] = useState({
-        hours: "",
-        minutes: "",
+        // hours: "",
+        // minutes: "",
         seconds: "",
     });
 
@@ -32,18 +32,17 @@ const Home = () => {
     };
 
     const handleAddTime = () => {
-        let total_time_inSec = (+inputs.seconds + +inputs.minutes * 60 + +inputs.hours * 3600);
+        let total_time_inSec = (+inputs.seconds);
         setuser_data({ ...user_data, timer: total_time_inSec, duration: total_time_inSec });
         setinputs({
-            hours: "",
-            minutes: "",
+            // hours: "",
+            // minutes: "",
             seconds: "",
         })
-
-
-
         localStorage.setItem('time_logs', JSON.stringify([...stored_data, { ...user_data, timer: total_time_inSec, duration: total_time_inSec }]))
         setstored_data([...stored_data, { ...user_data, timer: total_time_inSec, duration: total_time_inSec }])
+
+        setuser_data({...user_data, title:"", category:""})
 
     };
 
@@ -74,7 +73,7 @@ const Home = () => {
         <Box className="home-container">
 
             <Stack direction='row' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2vh' }}>
-                <TextField
+                {/* <TextField
                     label="hours"
                     value={inputs.hours}
                     name="hours"
@@ -89,7 +88,7 @@ const Home = () => {
                     onChange={handleInputs}
                     type='number' defaultValue='0'
 
-                />
+                /> */}
                 <TextField
                     label="Seconds"
                     value={inputs.seconds}
@@ -115,7 +114,7 @@ const Home = () => {
             </Stack>
             <Stack direction='row' spacing={10}>
                 <Button onClick={handleAddTime} variant='contained' 
-                disabled={inputs.seconds < 0 || inputs.minutes < 0 || inputs.hours < 0 || !user_data.title ||!user_data.category }>
+                disabled={inputs.seconds <= 0  || !user_data.title ||!user_data.category }>
                     Add Timer
                 </Button>
                 <Button onClick={() => nav("/history")} variant='contained' color="error">Go Timer Logs</Button>
@@ -125,33 +124,12 @@ const Home = () => {
 
 
 
-            {/* <Box className="timer-container">
-                {
-                    stored_data.map((item, index) => {
-                        return <TimerUI
-                            stored_data={item}
-                            index={index}
-                            updateLocalStoreage={updateLocalStoreage}
-                        />
-                    })
-                }
-            </Box> */}
-
-
-            {/* <Box className="timer-table">
-                {
-                    stored_data.map((item, index)=>{
-                        return <TimerTable
-                            stored_data={item}
-                            index={index}
-                        />
-                    })
-                }
-            </Box> */}
-            <Box>
-                <Grid container width='100vw' >
-                    <Grid bgcolor='' size='grow' alignItems="center" sx={{ display: 'flex', flexDirection: 'column', gap: '2vw', alignItems: 'center' }}>
-                        <Typography variant='h4'>Workout</Typography>
+            
+  
+            <Box sx={{height:'78vh', overflow:'auto'}}>
+                <Grid container width='99vw'  >
+                    <Grid bgcolor='' size='grow' alignItems="center" sx={{ display: 'flex', flexDirection: 'column', gap: '2vw', alignItems: 'center', }}>
+                        <Typography variant='h4' fontWeight='bold'>Workout</Typography>
 
                         {
                             stored_data.map((item, index) => {
@@ -166,7 +144,7 @@ const Home = () => {
                         }
                     </Grid>
                     <Grid bgcolor='' size='grow' sx={{ display: 'flex', flexDirection: 'column', gap: '2vw', alignItems: 'center' }}>
-                        <Typography variant='h4'>Study</Typography>
+                        <Typography variant='h4' fontWeight='bold'>Study</Typography>
 
 
                         {

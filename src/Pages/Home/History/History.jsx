@@ -9,7 +9,7 @@ const History = () => {
   const [stored_data, setstored_data] = useState([])
 
   useEffect(() => {
-    setstored_data(JSON.parse(localStorage.getItem('time_logs')))
+    setstored_data(JSON.parse(localStorage.getItem('time_logs')) || [])
   }, [])
 
   return (
@@ -30,13 +30,13 @@ const History = () => {
           <TableBody >
             {
               stored_data.map((item, index) => {
-                if (item.status == 'Completed') {
+                if (item?.status == 'Completed') {
                   return <TableRow key={index} >
-                    <TableCell align='center'>{item.title}</TableCell>
-                    <TableCell align='center'>{item.category}</TableCell>
-                    <TableCell align='center'>{item.duration}</TableCell>
-                    <TableCell align='center'>{item.timer}</TableCell>
-                    <TableCell align='center'>{item.status}</TableCell>
+                    <TableCell align='center'>{item?.title}</TableCell>
+                    <TableCell align='center'>{item?.category}</TableCell>
+                    <TableCell align='center'>{item?.duration}</TableCell>
+                    <TableCell align='center'>{item?.timer}</TableCell>
+                    <TableCell align='center'>{item?.status}</TableCell>
                   </TableRow>
                 }
               })
