@@ -40,6 +40,7 @@ To begin using the application, follow these steps:
     *   After the notification, the completed timer and its details will be added to the history log for reference.
     *   To view the logs of all completed timers, click on the "Go Timer Log" button, which will display the previous timer sessions along with their details (title, duration, and category).
 
+
 Development Assumptions
 -----------------------
 
