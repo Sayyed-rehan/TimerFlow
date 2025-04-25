@@ -1,12 +1,42 @@
-# React + Vite
+Setup Instructions
+------------------
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To begin using the application, follow these steps:
 
-Currently, two official plugins are available:
+1.  **Homepage Setup**:
+    
+    *   On the homepage, you will find three text fields:
+        
+        *   **Title**: Enter the title for the timer (e.g., "Workout", "Study Session").
+            
+        *   **Duration**: Provide the timer duration in seconds.
+            
+        *   **Category**: Specify the category for the timer (e.g., "Exercise", "Break", "Study").
+            
+    *   Click on the **'Add Timer'** button.
+        
+2.  **Starting the Timer**:
+    
+    *   Once the **'Add Timer'** button is clicked, the timer for the entered duration will start.
+        
+    *   The title of the timer and its associated category will be displayed.
+        
+3.  **Pause, Resume, and Reset Timer**:
+    
+    *   **Pause Timer**: You can pause the timer at any point using the Pause button.
+        
+    *   **Resume Timer**: Use the Resume button to continue the timer from where it was paused.
+        
+    *   **Reset Timer**: If you want to stop the current timer and reset it back to its original duration, use the Reset button.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    *   **Circular Progress Bar**: The timer's progression is visualized dynamically via a circular progress bar, giving a clear indication of the remaining time.
+        
+4.  **Timer Completion**:
+    
+    *   When the timer completes, a notification will alert the user that the timer has exceeded its assigned time with the Title.
+        
+5.  **History Logs**:
+    
+    *   After the notification, the completed timer and its details will be added to the history log for reference.
+    *   To view the logs of all completed timers, click on the "Go Timer Log" button, which will display the previous timer sessions along with their details (title, duration, and category).   
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
