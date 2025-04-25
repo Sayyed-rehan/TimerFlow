@@ -38,5 +38,21 @@ To begin using the application, follow these steps:
 5.  **History Logs**:
     
     *   After the notification, the completed timer and its details will be added to the history log for reference.
-    *   To view the logs of all completed timers, click on the "Go Timer Log" button, which will display the previous timer sessions along with their details (title, duration, and category).   
+    *   To view the logs of all completed timers, click on the "Go Timer Log" button, which will display the previous timer sessions along with their details (title, duration, and category).
+
+Development Assumptions
+-----------------------
+
+The project was built with a focus on creating an **interactive and visually appealing experience**. Key assumptions included:
+
+*   **Advanced Timer Controls**: Features like pause, resume, and reset ensure seamless user interaction.
+    
+*   **Visual Progress Tracking**: A circular progress path enhances usability and keeps users engaged.
+    
+*   **Alerts for Completion**: Timely notifications capture attention when a timer ends.
+    
+*   **Task Categorization**: Organizing tasks into **Exercise**, **Study**, and **Workout** adds clarity and aesthetic value to the interface.
+    
+
+These thoughtful design choices reflect an emphasis on functionality and user-centric design.   
 
